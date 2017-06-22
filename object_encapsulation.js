@@ -11,6 +11,13 @@
 
 })(function () {
 
-	 return {}
+	/*clone*/
+	function clone() {
+
+	}
+
+	 return {
+	 	clone: clone
+	 }
 
 })

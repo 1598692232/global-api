@@ -11,7 +11,9 @@
 		window.CommonEncapsulation = factory();
 	}
 })(function () {
-	/* vue组件逻辑处理
+	/* vue组件逻辑处理*/
+	/*
+	 * 多选处理
 	 * @param{this} 为组件的this
 	 * @param{obj1} 被选择的数组
 	 * @param{obj2} 选择之后数组
@@ -40,6 +42,14 @@
 		}
 	}
 
+	/*
+	 * 单选处理
+	 * @param{this} 为组件的this
+	 * @param{obj1} 被选择的数组
+	 * @param{obj2} 选择之后数组
+	 * @param{k} 点击的第几个
+	 * @:元素对象为{label:'1',value:1, selected: false} --- {显示文字，值，是否选择}
+	 */
 	function radioSelect (obj1, obj2, k){
 		var _self = this
 

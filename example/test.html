@@ -7,9 +7,11 @@
 <body>
 <script src="../array_encapsulation.js"></script>
 <script>
-    var a = [1,2,3]
+    var a = [1,2,3];
+    var b = [{value:1},{value:2},{value:3}]
     ArrayEncapsulation.remove(a,2)
-    console.log(a);
+    ArrayEncapsulation.remove(b,2,'value')
+    console.log(a,b);
 </script>
 </body>
 </html>
