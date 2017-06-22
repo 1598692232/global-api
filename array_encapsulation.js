@@ -11,11 +11,23 @@
 
 })(function () {
 	/*1.纯属组删除；2.元素为对象时，指定删除*/
-	function remove(val, key){
+	function remove(args, val, key){
+		if (key == undefined) {
+			args.forEach(function (v, k) {
+				if (val == v) {
+					args.splice(args.indexOf(val), 1);
+				} else {
+					return ;
+				}
+			})
+		} else {
 
+		}
 	}
 
 
-	return {}
+	return {
 		remove: remove
+	}
+
 })
