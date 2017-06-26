@@ -5,13 +5,27 @@
     <title>Title</title>
 </head>
 <body>
+<div id="main"></div>
+
 <script src="../array_encapsulation.js"></script>
+<script src="../dom_encapsulation.js"></script>
 <script>
+    var dom = ''
+    for (var i=1; i<=100; i++) {
+        dom += '<li>' + i + '</li>'
+    }
+    dom = '<ul>' + dom + '</ul>'
+    document.getElementById('main').innerHTML = dom
     var a = [1,2,3];
     var b = [{value:1},{value:2},{value:3}]
     ArrayEncapsulation.remove(a,2)
     ArrayEncapsulation.remove(b,2,'value')
     console.log(a,b);
+    DomEncapsulation.autoScroll(1000, 10)
+    var c = [1,2,3,4,2,6,7,1];
+    console.log(ArrayEncapsulation.unique(c))
+    var d = [{value:1},{value:2},{value:3},{value:1},{value:2},{value:3}]
+    console.log(12312312312,ArrayEncapsulation.unique(d,'value'))
 </script>
 </body>
 </html>

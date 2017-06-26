@@ -24,10 +24,30 @@
 	}
 
 	/*去重*/
-	function unique(args, val, key) {
-		args.forEach(function(v, k) {
+	function unique(args, key) {
+		var arr = [];
+		var os = [],is = [];
+		args.forEach(function (v, k) {
+			if(typeof v == 'object') {
+				if (os.indexOf(v[key]) == -1) {
+					os.push(v[key]);
+					is.push(k);
+				}
+			} else {
+				args.forEach(function(v, k) {
+					if (arr.indexOf(v) == -1) {
+						arr.push(v)
+					}
+				})
+			}
 
 		})
+		if(is.length != 0) {
+			is.forEach(function(v1, k1) {
+				arr.push(args[v1]);
+			})
+		}
+		return arr;
 	}
 
 	/*强制转数组*/
@@ -35,16 +55,11 @@
 
 	}
 
-	/* 筛选数组 */
-	function filterArray() {
-
-	}
 
 	return {
 		remove: remove,
 		unique: unique,
-		toArray: toArray,
-		filterArray: filterArray
+		toArray: toArray
 	}
 
 })

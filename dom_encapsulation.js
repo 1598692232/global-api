@@ -10,7 +10,21 @@
 	}
 
 })(function () {
+	/* 屏幕滚动指定位置 */
+	function autoScroll (top, step) {
+		var st = top;
+		var timer = requestAnimationFrame (function scrollToTop() {
+			if (document.body.scrollTop < st) {
+				document.body.scrollTop += step;
+				timer = requestAnimationFrame(scrollToTop)
+			} else {
+				cancelAnimationFrame(timer)
+			}
+		})
+	}
 
-	return {}
+	return {
+		autoScroll: autoScroll
+	}
 
 })
