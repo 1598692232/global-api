@@ -52,7 +52,7 @@
 
 	/*强制转数组*/
 	function toArray() {
-
+			return !Array.form ? [].slice.call(arguments) : Array.form(arguments);
 	}
 
 
